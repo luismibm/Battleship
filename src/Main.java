@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void tableroVacio(char[][] tablero) {
@@ -30,13 +32,56 @@ public class Main {
 
     }
 
+    public static void insertarLancha(char[][] tablero, int row, int col) {
+
+        tablero[row][col] = 'L';
+
+    }
+
+    public static void insertarBarco(char[][] tablero, int row, int col) {
+
+        tablero[row][col] = 'B';
+        tablero[row][col+1] = 'B';
+        tablero[row][col+2] = 'B';
+
+    }
+
+    public static void insertarAcorazado(char[][] tablero, int row, int col) {
+
+        tablero[row][col] = 'A';
+        tablero[row][col+1] = 'A';
+        tablero[row][col+2] = 'A';
+        tablero[row][col+3] = 'A';
+
+    }
+
+    public static void insertarPortaaviones(char[][] tablero, int row, int col) {
+
+        tablero[row][col] = 'P';
+        tablero[row+1][col] = 'P';
+        tablero[row+2][col] = 'P';
+        tablero[row+3][col] = 'P';
+        tablero[row+4][col] = 'P';
+
+    }
+
     public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("Bienvenido a Battleship!");
         char[][] tableroUser = new char[10][10];
         System.out.println("Tablero vacío: ");
         tableroVacio(tableroUser);
         tableroMostrar(tableroUser);
+
+        // Test
+        insertarLancha(tableroUser,1,1);
+        insertarBarco(tableroUser, 3, 3);
+        insertarAcorazado(tableroUser, 5, 3);
+        insertarPortaaviones(tableroUser, 5, 0);
+        tableroMostrar(tableroUser);
+
 
     }
 }
