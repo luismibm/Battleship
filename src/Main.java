@@ -7,16 +7,16 @@ public class Main {
 
     public static int gameMode() {
 
-        Scanner sc = new Scanner(System.in);
         System.out.println("- - BATTLESHIP - - ");
         System.out.println("1 - Easy");
         System.out.println("2 - Normal");
         System.out.println("3 - Hard");
-        System.out.println("4 - Custom");
         System.out.print("Select an option: ");
+        Scanner sc = new Scanner(System.in);
         return sc.nextInt();
 
     }
+
 
     // Board Functions
 
@@ -54,74 +54,51 @@ public class Main {
 
     }
 
+
     // Boat Functions
 
-    public static void addBoats(char[][] board, int numLanchas, int numBuques, int numAcorazados, int numPortaaviones) {
+    public static boolean boatsLeft(char[][] gameBoard) {
+        for (int i = 0; i < gameBoard.length; i++) {
+            for (int j = 0; j < gameBoard[i].length; j++) {
+                char cellContent = gameBoard[i][j];
+                if (cellContent == 'L' || cellContent == 'B' || cellContent == 'A' || cellContent == 'P') {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static void addBoats(char[][] board, int numLanchas) {
 
         for (int i = 0; i < numLanchas; i++) {
             addLancha(board);
         }
 
-        for (int i = 0; i < numBuques; i++) {
-            addBuque(board);
-        }
-
-        for (int i = 0; i < numAcorazados; i++) {
-            addAcorazado(board);
-        }
-
-        for (int i = 0; i < numPortaaviones; i++) {
-            addPortaaviones(board);
-        }
-
     }
 
     public static void addLancha(char[][] board) {
-
-        Random random = new Random();
-        int row = random.nextInt(10);
-        int col = random.nextInt(10);
-        board[row][col] = 'L';
-
+        int fila = (int) (Math.random() * 10);
+        int columna = (int) (Math.random() * 10);
+        if (board[fila][columna] == '-') {
+            board[fila][columna] = 'L';
+        } else {
+            addLancha(board);
+        }
     }
 
-    public static void addBuque(char[][] board) {
-
-        Random random = new Random();
-        int row = random.nextInt(10);
-        int col = random.nextInt(10);
-        board[row][col] = 'B';
-        board[row][col+1] = 'B';
-        board[row][col+2] = 'B';
-
-    }
-
-    public static void addAcorazado(char[][] board) {
-
-        Random random = new Random();
-        int row = random.nextInt(10);
-        int col = random.nextInt(10);
-        board[row][col] = 'A';
-        board[row][col+1] = 'A';
-        board[row][col+2] = 'A';
-        board[row][col+3] = 'A';
-
-    }
-
-    public static void addPortaaviones(char[][] board) {
-
-        Random random = new Random();
-        int row = random.nextInt(10);
-        int col = random.nextInt(10);
-        board[row][col] = 'P';
-        board[row+1][col] = 'P';
-        board[row+2][col] = 'P';
-        board[row+3][col] = 'P';
-        board[row+4][col] = 'P';
-
-    }
 
     // Fire Functions
+
+    public static void openFire(char[][] sBoard, char[][] hBoard, int row, int col) {
+
+        if (hBoard[row][col] == '-') {
+            sBoard[row][col] = '*';
+        } else {
+            sBoard[row][col] = 'X';
+        }
+
+    }
 
     public static void main(String[] args){
 
@@ -133,21 +110,29 @@ public class Main {
         switch (gameMode()) {
 
             case 1:
-                addBoats(hiddenBoard, 5, 3, 1, 1);
+                addBoats(hiddenBoard, 5);
                 break;
 
             case 2:
-                addBoats(hiddenBoard, 3, 1, 1, 1);
+                addBoats(hiddenBoard, 3);
                 break;
 
             case 3:
-                addBoats(hiddenBoard, 1, 1, 0, 0);
+                addBoats(hiddenBoard, 1);
                 break;
 
         }
 
         // Test
-        showBoard(hiddenBoard);
+
+        int fireOpportunities = 50;
+        do {
+            showBoard(shownBoard);
+            openFire(shownBoard, hiddenBoard, sc.nextInt(), sc.nextInt());
+            fireOpportunities--;
+            System.out.println("Fire opportunities left: " + fireOpportunities);
+        } while (boatsLeft(hiddenBoard) && fireOpportunities > 0);
+
 
     }
 }
