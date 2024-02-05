@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d6e0a85-25ac-4f5d-8f4a-92b7461c4bbd" name="Changes" comment="Added more functions&#10;&#10;Creación de las función que crean todos los tipos de barcos sin comprobaciones por colisión o creación fuera del tablero">
+    <list default="true" id="2d6e0a85-25ac-4f5d-8f4a-92b7461c4bbd" name="Changes" comment="V1.0&#10;&#10;Juego funcional&#10;Solo un tipo de barco&#10;Niveles de dificultad">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -25,23 +25,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/luismi/GitHub/Battleship",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/luismi/GitHub/Battleship&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -67,7 +67,9 @@
       <workItem from="1706996087296" duration="234000" />
       <workItem from="1707069605100" duration="56000" />
       <workItem from="1707078869623" duration="43000" />
-      <workItem from="1707078928616" duration="3022000" />
+      <workItem from="1707078928616" duration="4058000" />
+      <workItem from="1707160975101" duration="1704000" />
+      <workItem from="1707163587111" duration="667000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -93,7 +95,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704976737204</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="V1.0&#10;&#10;Juego funcional&#10;Solo un tipo de barco&#10;Niveles de dificultad">
+      <option name="closed" value="true" />
+      <created>1707083482046</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707083482046</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +113,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Added first functions&#10;&#10;Creación de la función que crea un tablero vacío&#10;Creación de la función que muestra los tableros" />
     <MESSAGE value="Added more functions&#10;&#10;Creación de las función que crean todos los tipos de barcos sin comprobaciones por colisión o creación fuera del tablero" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more functions&#10;&#10;Creación de las función que crean todos los tipos de barcos sin comprobaciones por colisión o creación fuera del tablero" />
+    <MESSAGE value="V1.0&#10;&#10;Juego funcional&#10;Solo un tipo de barco&#10;Niveles de dificultad" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0&#10;&#10;Juego funcional&#10;Solo un tipo de barco&#10;Niveles de dificultad" />
   </component>
 </project>
